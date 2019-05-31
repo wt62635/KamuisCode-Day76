@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>Servlet04-lab</display-name>
+	<servlet>
+		<servlet-name>SomeServlet</servlet-name>
+		<servlet-class>web.SomeServlet</servlet-class>
+		<!-- 配置初始化参数。 -->
+		<init-param>
+			<param-name>company</param-name>
+			<param-value>IBM</param-value>
+			
+		</init-param>
+		<!-- 配置启动加载。当容器启动之后，
+		会依据参数值的大小进行创建相应的实例。
+		参数值是一个大于等于零的整数。值越小越先被创建。 -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SomeServlet</servlet-name>
+		<url-pattern>/some</url-pattern>
+	</servlet-mapping>
+</web-app>
